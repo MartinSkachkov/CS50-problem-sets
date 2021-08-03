@@ -4,6 +4,22 @@
 #include <stdlib.h>
 #include <string.h>
 
+int power_recursion (int base, int exponent)
+{
+    if (exponent == 0)
+    {
+        return 1;
+    }
+    else if (exponent > 0)
+    {
+        return base * power_recursion(base, exponent - 1);
+    }
+    else
+    {
+        return printf("Error");
+    }
+}
+
 int power (int base, int exponent) // base^exponent = result
 {
     int x = base; //2
@@ -29,4 +45,5 @@ int main(void)
     scanf("%i", &y);
     
     printf("Result %i^%i = %i\n",x , y, power(x, y));
+    printf("Result %i^%i = %i\n",x , y, power_recursion(x, y));
 }
